@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+    <th>Immagine</th>
       <th>Nome</th>
       <th>Ingredienti</th>
       <th>Prezzo</th>
@@ -15,6 +16,11 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
+      <td>
+      <% if product.foto.attached? %>
+<%= image_tag url_for(product.foto)%>
+<% end %>
+      </td>
         <td><%= product.nome %></td>
         <td><%= product.ingredienti %></td>
         <td><%= product.prezzo %></td>
