@@ -1,6 +1,6 @@
 <%= form_with(model: product) do |form| %>
   <% if product.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation", class="alert alert-danger">
       <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
       <ul>
@@ -11,24 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :nome %>
-    <%= form.text_field :nome %>
+  <div class="mb-3">
+    <%= form.label :nome, class: 'form-label' %>
+    <%= form.text_field :nome, class: 'form-control' %>
+    <div class="form-text">Inserisci il nome del prodotto senza dimenticarti le maiuscole</div>
   </div>
 
-  <div class="field">
-    <%= form.label :ingredienti %>
-    <%= form.text_area :ingredienti %>
+  <div class="mb-3">
+    <%= form.label :ingredienti, class: 'form-label' %>
+    <%= form.text_area :ingredienti, class: 'form-control' %>
+    <div class="form-text">Inserisci gli ingredienti, separati dalle virgole</div>
   </div>
 
-  <div class="field">
-    <%= form.label :prezzo %>
-    <%= form.text_field :prezzo %>
+  <div class="mb-3">
+    <%= form.label :prezzo, class: 'form-label' %>
+    <%= form.text_field :prezzo, class: 'form-control' %>
+    <div class="form-text">Prezzo del prodotto (al pezzo, al kg o al litro)</div>
   </div>
 
-  <div class="field">
-    <%= form.label :foto %>
-    <%= form.file_field :foto %>
+  <div class="mb-3">
+    <%= form.label :foto, class: 'form-label' %>
+    <%= form.file_field :foto, class: 'form-control' %>
   </div>
 
   <div class="actions">
